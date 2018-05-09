@@ -1,0 +1,9 @@
+android {
+    defaultConfig {
+        applicationId "com.example.leo.gradlecaseproject"
+    }
+}
+
+dependencies {
+
+}

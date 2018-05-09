@@ -1,0 +1,21 @@
+project.ext {
+    compileSdkVersion = 27
+
+    minSdkVersion = 21
+
+    targetSdkVersion = 27
+
+    versionCode = 1
+
+    versionName = "1.0"
+
+    dependencies = [
+            'appcompat-v7'     : 'com.android.support:appcompat-v7:27.1.1',
+            'constraint-layout': 'com.android.support.constraint:constraint-layout:1.1.0',
+            'junit'            : 'junit:junit:4.12',
+            'runner'           : 'com.android.support.test:runner:1.0.2',
+            'espresso-core'    : 'com.android.support.test.espresso:espresso-core:3.0.2',
+            'design'           : 'com.android.support:design:27.1.1',
+            'recyclerview'     : 'com.android.support:recyclerview-v7:26.1.0'
+    ]
+}
