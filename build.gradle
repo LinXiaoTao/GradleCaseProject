@@ -27,3 +27,16 @@ task clean(type: Delete) {
 apply from: 'gradle/constants.gradle'
 apply from: 'gradle/init.gradle'
 apply from: 'gradle/dependencies.gradle'
+
+task('showProjectPlugins'){
+    doLast {
+        println "当前项目 $project.name 插件有："
+        project.plugins.find {
+            println "$it"
+        }
+    }
+}
+
+// 默认执行的 task，当执行 Gradle 没有携带指定的 task 参数
+defaultTasks 'showProjectPlugins'
+

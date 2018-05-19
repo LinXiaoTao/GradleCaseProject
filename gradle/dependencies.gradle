@@ -1,4 +1,7 @@
 subprojects {
+    if (project.initIgnore.toBoolean()) {
+        return
+    }
     dependencies {
         testImplementation rootProject.ext.dependencies['junit']
         androidTestImplementation rootProject.ext.dependencies['runner']

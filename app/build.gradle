@@ -1,3 +1,7 @@
+import com.example.gradle.HelloWorld
+
+apply plugin: 'com.example.hello'
+
 android {
     defaultConfig {
         applicationId "com.example.leo.gradlecaseproject"
@@ -5,5 +9,21 @@ android {
 }
 
 dependencies {
-
 }
+
+task hello(type: HelloWorld) {
+    userName = "leo"
+}
+
+class TestPlugin implements Plugin<Project> {
+    void apply(Project project) {
+        project.tasks.create('pluginTest') {
+            doLast {
+                println "This is Test"
+            }
+        }
+    }
+}
+
+apply plugin: TestPlugin
+

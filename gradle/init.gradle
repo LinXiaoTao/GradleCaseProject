@@ -1,11 +1,13 @@
 subprojects {
+    if (project.initIgnore.toBoolean()) {
+        return
+    }
     if (project.isApplication.toBoolean()) {
         // 当前 module 导入 application plugin
         project.plugins.apply("com.android.application")
     } else {
         project.plugins.apply("com.android.library")
     }
-
 
     android {
         compileSdkVersion rootProject.ext['compileSdkVersion']

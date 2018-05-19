@@ -1,0 +1,18 @@
+apply plugin: 'java-gradle-plugin'
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
+
+gradlePlugin {
+    plugins {
+        helloPlugin {
+            id = 'com.example.hello'
+            implementationClass = 'com.example.gradle.HelloWorldPlugin'
+        }
+    }
+}
