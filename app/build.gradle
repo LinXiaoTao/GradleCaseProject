@@ -1,14 +1,54 @@
 import com.example.gradle.HelloWorld
 
+import java.text.SimpleDateFormat
+
 apply plugin: 'com.example.hello'
 
 android {
     defaultConfig {
         applicationId "com.example.leo.gradlecaseproject"
     }
+
+    flavorDimensions "api", "mode"
+
+    productFlavors {
+        demo {
+            dimension "mode"
+        }
+        full {
+            dimension "mode"
+        }
+        minApi24 {
+            dimension "api"
+        }
+        minApi23 {
+            dimension "api"
+        }
+    }
+}
+
+configurations {
+    demoDeBugApk {
+
+    }
 }
 
 dependencies {
+
+}
+
+hello {
+    testProperty = "test"
+    outFile = 'hello'
+    info {
+        username = "leo"
+        email = "linxiaotao1993@vip.qq.com"
+    }
+    other {
+        time {
+            value = new SimpleDateFormat("yyyy-MM-dd").format(new Date())
+        }
+    }
 }
 
 task hello(type: HelloWorld) {
